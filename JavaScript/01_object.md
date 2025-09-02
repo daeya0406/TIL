@@ -10,7 +10,9 @@ let person = {
 };
 
 console.log("초기 person:", person);
+```
 
+```js
 // ---------------------------------------------------------
 // 2. 프로퍼티 접근 (점 표기법, 대괄호 표기법)
 let name = person.name;
@@ -23,7 +25,9 @@ console.log("\n[접근]");
 console.log("name:", name);
 console.log("age:", age);
 console.log("hobby:", hobby);
+```
 
+```js
 // ---------------------------------------------------------
 // 3. 프로퍼티 추가
 person.job = "backend developer";
@@ -31,7 +35,9 @@ person["favoriteFood"] = "pizza";
 
 console.log("\n[추가]");
 console.log(person);
+```
 
+```js
 // ---------------------------------------------------------
 // 4. 프로퍼티 수정
 person.job = "designer";
@@ -39,7 +45,9 @@ person["favoriteFood"] = "sushi";
 
 console.log("\n[수정]");
 console.log(person);
+```
 
+```js
 // ---------------------------------------------------------
 // 5. 프로퍼티 삭제
 delete person.job;
@@ -56,7 +64,9 @@ let result2 = "dog" in person;
 console.log("\n[존재 확인 - in]");
 console.log('"name" in person ->', result1);
 console.log('"dog" in person  ->', result2);
+```
 
+```js
 // ---------------------------------------------------------
 // 7. const 객체와 프로퍼티 조작
 const animal = {
@@ -74,7 +84,9 @@ delete animal.color; // 삭제
 
 console.log("\n[const 객체 조작 후]");
 console.log(animal);
+```
 
+```js
 // ---------------------------------------------------------
 // 8. 객체에 메서드 정의
 const user = {
