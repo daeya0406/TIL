@@ -1,8 +1,8 @@
-# 객체(Object) 프로퍼티 다루기 — 한 코드 프레임 예시
+# 객체(Object)
+
+## 1. 객체 선언
 
 ```js
-// ---------------------------------------------------------
-// 1. 객체 선언
 let person = {
   name: "Alice",
   age: 30,
@@ -12,9 +12,9 @@ let person = {
 console.log("초기 person:", person);
 ```
 
+## 2. 프로퍼티 접근 (점 표기법, 대괄호 표기법)
+
 ```js
-// ---------------------------------------------------------
-// 2. 프로퍼티 접근 (점 표기법, 대괄호 표기법)
 let name = person.name;
 let age = person["age"];
 
@@ -27,9 +27,9 @@ console.log("age:", age);
 console.log("hobby:", hobby);
 ```
 
+## 3. 프로퍼티 추가
+
 ```js
-// ---------------------------------------------------------
-// 3. 프로퍼티 추가
 person.job = "backend developer";
 person["favoriteFood"] = "pizza";
 
@@ -37,9 +37,9 @@ console.log("\n[추가]");
 console.log(person);
 ```
 
+## 4. 프로퍼티 수정
+
 ```js
-// ---------------------------------------------------------
-// 4. 프로퍼티 수정
 person.job = "designer";
 person["favoriteFood"] = "sushi";
 
@@ -47,17 +47,19 @@ console.log("\n[수정]");
 console.log(person);
 ```
 
+## 5. 프로퍼티 삭제
+
 ```js
-// ---------------------------------------------------------
-// 5. 프로퍼티 삭제
 delete person.job;
 delete person["favoriteFood"];
 
 console.log("\n[삭제]");
 console.log(person);
+```
 
-// ---------------------------------------------------------
-// 6. 프로퍼티 존재 확인 (in 연산자)
+## 6. 프로퍼티 존재 확인 (in 연산자)
+
+```js
 let result1 = "name" in person;
 let result2 = "dog" in person;
 
@@ -66,9 +68,9 @@ console.log('"name" in person ->', result1);
 console.log('"dog" in person  ->', result2);
 ```
 
+## 7. const 객체와 프로퍼티 조작
+
 ```js
-// ---------------------------------------------------------
-// 7. const 객체와 프로퍼티 조작
 const animal = {
   type: "고양이",
   name: "나비",
@@ -86,9 +88,9 @@ console.log("\n[const 객체 조작 후]");
 console.log(animal);
 ```
 
+## 8. 객체에 메서드 정의
+
 ```js
-// ---------------------------------------------------------
-// 8. 객체에 메서드 정의
 const user = {
   name: "김정대",
   sayHi() {
