@@ -30,23 +30,6 @@ console.log("초기 person:", person);
 
 ---
 
-## 1. 객체 선언
-
-객체는 `{}` 안에 키와 값을 넣어 선언한다.
-
-```js
-let person = {
-  name: "Alice",
-  age: 30,
-  hobby: "cycling",
-};
-
-console.log("초기 person:", person);
-// 초기 person: { name: 'Alice', age: 30, hobby: 'cycling' }
-```
-
----
-
 ## 2. 프로퍼티 접근
 
 또는 []로 프로퍼티에 접근할 수 있다.
