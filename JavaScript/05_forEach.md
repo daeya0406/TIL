@@ -1,4 +1,3 @@
-````
 # forEach() 함수
 
 ## 목차
@@ -22,7 +21,7 @@
 const numbers = [1, 2, 3];
 
 numbers.forEach(function (num) {
-  console.log(num);
+console.log(num);
 });
 // 1
 // 2
@@ -35,7 +34,7 @@ numbers.forEach(function (num) {
 
 \```js
 array.forEach(function (value, index, array) {
-  // 실행할 코드
+// 실행할 코드
 });
 \```
 
@@ -51,7 +50,7 @@ array.forEach(function (value, index, array) {
 const fruits = ["apple", "banana", "cherry"];
 
 fruits.forEach(function (fruit, i) {
-  console.log(i + ":", fruit);
+console.log(i + ":", fruit);
 });
 // 0: apple
 // 1: banana
@@ -68,7 +67,7 @@ fruits.forEach(function (fruit, i) {
 const arr = [10, 20, 30];
 
 arr.forEach((value) => {
-  console.log(value);
+console.log(value);
 });
 // 10
 // 20
@@ -86,7 +85,7 @@ arr.forEach((value) => {
 const animals = ["dog", "cat", "rabbit"];
 
 animals.forEach((animal, index) => {
-  console.log(`${index}: ${animal}`);
+console.log(`${index}: ${animal}`);
 });
 // 0: dog
 // 1: cat
@@ -99,12 +98,12 @@ animals.forEach((animal, index) => {
 
 \```js
 const users = [
-  { name: "Alice", age: 25 },
-  { name: "Bob", age: 30 },
+{ name: "Alice", age: 25 },
+{ name: "Bob", age: 30 },
 ];
 
 users.forEach((user) => {
-  console.log(`${user.name} is ${user.age} years old`);
+console.log(`${user.name} is ${user.age} years old`);
 });
 // Alice is 25 years old
 // Bob is 30 years old
@@ -120,13 +119,12 @@ users.forEach((user) => {
 const nums = [1, 2, 3];
 
 // forEach → undefined 반환
-const result1 = nums.forEach((n) => n * 2);
+const result1 = nums.forEach((n) => n \* 2);
 console.log(result1); // undefined
 
 // map → 새 배열 반환
-const result2 = nums.map((n) => n * 2);
+const result2 = nums.map((n) => n \* 2);
 console.log(result2); // [2, 4, 6]
 \```
 
 ---
-````
