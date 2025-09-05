@@ -40,7 +40,7 @@ let age = person["age"];
 let property = "hobby";
 let hobby = person[property];
 
-console.log("\n[접근]");
+console.log("n[접근]");
 console.log("name:", name); // Alice
 console.log("age:", age); // 30
 console.log("hobby:", hobby); // cycling
@@ -56,7 +56,7 @@ console.log("hobby:", hobby); // cycling
 person.job = "backend developer";
 person["favoriteFood"] = "pizza";
 
-console.log("\n[추가]");
+console.log("n[추가]");
 console.log(person);
 // { name: 'Alice', age: 30, hobby: 'cycling', job: 'backend developer', favoriteFood: 'pizza' }
 ```
@@ -71,7 +71,7 @@ console.log(person);
 person.job = "designer";
 person["favoriteFood"] = "sushi";
 
-console.log("\n[수정]");
+console.log("n[수정]");
 console.log(person);
 // { name: 'Alice', age: 30, hobby: 'cycling', job: 'designer', favoriteFood: 'sushi' }
 ```
@@ -86,7 +86,7 @@ delete 키워드로 프로퍼티를 제거할 수 있다.
 delete person.job;
 delete person["favoriteFood"];
 
-console.log("\n[삭제]");
+console.log("n[삭제]");
 console.log(person);
 // { name: 'Alice', age: 30, hobby: 'cycling' }
 ```
@@ -101,7 +101,7 @@ in 연산자로 특정 프로퍼티가 있는지 확인할 수 있다.
 let result1 = "name" in person;
 let result2 = "dog" in person;
 
-console.log("\n[존재 확인 - in]");
+console.log("n[존재 확인 - in]");
 console.log('"name" in person ->', result1); // true
 console.log('"dog" in person  ->', result2); // false
 ```
@@ -119,7 +119,7 @@ const animal = {
   color: "black",
 };
 
-console.log("\n[const 객체 초기값]");
+console.log("n[const 객체 초기값]");
 console.log(animal);
 // { type: '고양이', name: '나비', color: 'black' }
 
@@ -127,7 +127,7 @@ animal.age = 2; // 추가
 animal.name = "까망이"; // 수정
 delete animal.color; // 삭제
 
-console.log("\n[const 객체 조작 후]");
+console.log("n[const 객체 조작 후]");
 console.log(animal);
 // { type: '고양이', name: '까망이', age: 2 }
 ```
