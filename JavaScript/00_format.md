@@ -29,13 +29,13 @@
 
 조건에 따라 코드 실행을 분기합니다.
 
-\```js
+```js
 if (조건) {
-// 실행
+  // 실행
 } else {
-// 다른 조건
+  // 다른 조건
 }
-\```
+```
 
 ---
 
@@ -43,9 +43,9 @@ if (조건) {
 
 한 줄로 조건 분기할 수 있습니다.
 
-\```js
+```js
 const result = score > 60 ? "pass" : "fail";
-\```
+```
 
 ---
 
@@ -53,11 +53,11 @@ const result = score > 60 ? "pass" : "fail";
 
 일반적인 카운터 기반 반복문입니다.
 
-\```js
+```js
 for (let i = 0; i < array.length; i++) {
-console.log(array[i]);
+  console.log(array[i]);
 }
-\```
+```
 
 ---
 
@@ -65,11 +65,11 @@ console.log(array[i]);
 
 배열의 **값**을 순회합니다.
 
-\```js
+```js
 for (const item of array) {
-console.log(item);
+  console.log(item);
 }
-\```
+```
 
 ---
 
@@ -77,11 +77,11 @@ console.log(item);
 
 객체의 **key**를 순회합니다.
 
-\```js
+```js
 for (let key in object) {
-console.log(key, object[key]);
+  console.log(key, object[key]);
 }
-\```
+```
 
 ---
 
@@ -89,11 +89,11 @@ console.log(key, object[key]);
 
 배열 전용 메서드로, 각 요소마다 함수를 실행합니다.
 
-\```js
+```js
 array.forEach((item, index) => {
-console.log(index, item);
+  console.log(index, item);
 });
-\```
+```
 
 ---
 
@@ -101,9 +101,9 @@ console.log(index, item);
 
 배열을 순회하면서 **새로운 배열을 반환**합니다.
 
-\```js
+```js
 const doubled = array.map((item) => item \* 2);
-\```
+```
 
 ---
 
@@ -111,9 +111,9 @@ const doubled = array.map((item) => item \* 2);
 
 조건에 맞는 요소만 걸러서 새로운 배열을 만듭니다.
 
-\```js
+```js
 const even = array.filter((n) => n % 2 === 0);
-\```
+```
 
 ---
 
@@ -121,94 +121,94 @@ const even = array.filter((n) => n % 2 === 0);
 
 조건에 맞는 **첫 번째 요소**를 반환합니다.
 
-\```js
+```js
 const found = array.find((n) => n > 10);
-\```
+```
 
 ---
 
 ## 10. 객체 키/값 다루기
 
-\```js
+```js
 Object.keys(obj); // ["name", "age"]
 Object.values(obj); // ["Alice", 25]
 Object.entries(obj); // [["name", "Alice"], ["age", 25]]
-\```
+```
 
 ---
 
 ## 11. 함수 선언
 
-\```js
+```js
 function add(a, b) {
-return a + b;
+  return a + b;
 }
-\```
+```
 
 ---
 
 ## 12. 화살표 함수
 
-\```js
+```js
 const add = (a, b) => a + b;
-\```
+```
 
 ---
 
 ## 13. 객체 선언 & 접근
 
-\```js
+```js
 const user = {
-name: "Alice",
-age: 25
+  name: "Alice",
+  age: 25,
 };
 
 console.log(user.name);
 console.log(user["age"]);
-\```
+```
 
 ---
 
 ## 14. 배열 선언 & 접근
 
-\```js
+```js
 const arr = [10, 20, 30];
 console.log(arr[0]); // 10
-\```
+```
 
 ---
 
 ## 15. 배열 조작 메서드
 
-\```js
+```js
 arr.push(4); // 끝에 추가
 arr.pop(); // 끝에서 제거
 arr.unshift(0); // 앞에 추가
 arr.shift(); // 앞에서 제거
-\```
+```
 
 ---
 
 ## 16. 문자열 메서드
 
-\```js
-str.length
-str.toUpperCase()
-str.toLowerCase()
-str.includes("word")
-str.indexOf("a")
-str.slice(0, 3)
-str.split(",")
-\```
+```js
+str.length;
+str.toUpperCase();
+str.toLowerCase();
+str.includes("word");
+str.indexOf("a");
+str.slice(0, 3);
+str.split(",");
+```
 
 ---
 
 ## 17. 템플릿 문자열
 
-\```js
+```js
 const name = "Alice";
 console.log(`안녕, ${name}님`);
-\```
+```
 
 ---
 
@@ -216,27 +216,27 @@ console.log(`안녕, ${name}님`);
 
 에러 발생 가능성이 있는 코드를 안전하게 처리합니다.
 
-\```js
+```js
 try {
-// 위험한 코드
+  // 위험한 코드
 } catch (e) {
-console.log("에러 발생:", e);
+  console.log("에러 발생:", e);
 }
-\```
+```
 
 ---
 
 ## 19. setTimeout / setInterval
 
-\```js
+```js
 setTimeout(() => {
-console.log("1초 후 실행");
+  console.log("1초 후 실행");
 }, 1000);
 
 setInterval(() => {
-console.log("반복 실행");
+  console.log("반복 실행");
 }, 1000);
-\```
+```
 
 ---
 
@@ -244,9 +244,9 @@ console.log("반복 실행");
 
 객체와 문자열 간 변환
 
-\```js
+```js
 const jsonStr = JSON.stringify({ name: "Alice" }); // 객체 → 문자열
 const obj = JSON.parse(jsonStr); // 문자열 → 객체
-\```
+```
 
 ---
