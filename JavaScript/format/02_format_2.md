@@ -22,7 +22,7 @@
 
 ## 1. 구조 분해 할당 (Destructuring)
 
-객체나 배열에서 값을 변수로 간단히 추출하는 문법입니다.
+객체나 배열에서 값을 변수로 간단히 추출하는 문법이다.
 
 ```js
 const user = { name: "Alice", age: 25 };
@@ -36,7 +36,7 @@ const [first, second] = colors;
 
 ## 2. 스프레드 연산자 (...)
 
-복사하거나 합칠 때 사용하며, 나머지 값 수집도 가능합니다.
+복사하거나 합칠 때 사용하며, 나머지 값 수집도 가능한다.
 
 ```js
 const arr1 = [1, 2];
@@ -76,7 +76,7 @@ greet("Alice", (msg) => console.log(msg));
 
 ## 5. Promise
 
-비동기 코드를 체인 방식으로 작성할 수 있습니다.
+비동기 코드를 체인 방식으로 작성할 수 있다
 
 ```js
 fetch("/api/data")
@@ -89,7 +89,7 @@ fetch("/api/data")
 
 ## 6. async / await
 
-Promise를 더 읽기 쉽게 사용할 수 있는 문법입니다.
+Promise를 더 읽기 쉽게 사용할 수 있는 문법이다.
 
 ```js
 async function fetchData() {
@@ -160,7 +160,7 @@ console.log(double(5)); // 10
 
 ## 10. this 바인딩
 
-함수 호출 방식에 따라 `this`가 가리키는 대상이 달라집니다.
+함수 호출 방식에 따라 `this`가 가리키는 대상이 달라진다.
 
 ```js
 const user = {

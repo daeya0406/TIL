@@ -27,7 +27,7 @@
 
 ## 1. 조건문
 
-조건에 따라 코드 실행을 분기합니다.
+조건에 따라 코드 실행을 분기한다.
 
 ```js
 if (조건) {
@@ -41,7 +41,7 @@ if (조건) {
 
 ## 2. 삼항 연산자
 
-한 줄로 조건 분기할 수 있습니다.
+한 줄로 조건 분기할 수 있다.
 
 ```js
 const result = score > 60 ? "pass" : "fail";
@@ -51,7 +51,7 @@ const result = score > 60 ? "pass" : "fail";
 
 ## 3. for 반복문
 
-일반적인 카운터 기반 반복문입니다.
+일반적인 카운터 기반 반복문이다.
 
 ```js
 for (let i = 0; i < array.length; i++) {
@@ -63,7 +63,7 @@ for (let i = 0; i < array.length; i++) {
 
 ## 4. for...of
 
-배열의 **값**을 순회합니다.
+배열의 **값**을 순회한다.
 
 ```js
 for (const item of array) {
@@ -75,7 +75,7 @@ for (const item of array) {
 
 ## 5. for...in
 
-객체의 **key**를 순회합니다.
+객체의 **key**를 순회한다.
 
 ```js
 for (let key in object) {
@@ -87,7 +87,7 @@ for (let key in object) {
 
 ## 6. forEach
 
-배열 전용 메서드로, 각 요소마다 함수를 실행합니다.
+배열 전용 메서드로, 각 요소마다 함수를 실행한다.
 
 ```js
 array.forEach((item, index) => {
@@ -99,7 +99,7 @@ array.forEach((item, index) => {
 
 ## 7. map
 
-배열을 순회하면서 **새로운 배열을 반환**합니다.
+배열을 순회하면서 **새로운 배열을 반환**한다.
 
 ```js
 const doubled = array.map((item) => item \* 2);
@@ -109,7 +109,7 @@ const doubled = array.map((item) => item \* 2);
 
 ## 8. filter
 
-조건에 맞는 요소만 걸러서 새로운 배열을 만듭니다.
+조건에 맞는 요소만 걸러서 새로운 배열을 만든다.
 
 ```js
 const even = array.filter((n) => n % 2 === 0);
@@ -119,7 +119,7 @@ const even = array.filter((n) => n % 2 === 0);
 
 ## 9. find
 
-조건에 맞는 **첫 번째 요소**를 반환합니다.
+조건에 맞는 **첫 번째 요소**를 반환한다.
 
 ```js
 const found = array.find((n) => n > 10);
@@ -214,7 +214,7 @@ console.log(`안녕, ${name}님`);
 
 ## 18. try...catch
 
-에러 발생 가능성이 있는 코드를 안전하게 처리합니다.
+에러 발생 가능성이 있는 코드를 안전하게 처리한다.
 
 ```js
 try {
