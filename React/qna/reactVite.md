@@ -1,43 +1,53 @@
-# CRA vs Vite 정리
-
-내가 궁금했던 **CRA(Webpack)** 과 **Vite(ESM)** 차이를 정리한 노트
+# CRA vs Vite
 
 ---
 
 ## 목차
 
-- [1. index.html에서 본 차이](#1-indexhtml에서-본-차이)
-- [2. ESM이 뭔가?](#2-esm이-뭔가)
-- [3. CRA(Webpack) 방식](#3-crawebpack-방식)
-- [4. Vite(ESM) 방식](#4-viteesm-방식)
-- [5. .js vs .jsx 차이](#5-js-vs-jsx-차이)
-- [6. 요약](#6-요약)
+- [1. 왜 index.html script 태그가 다를까?](#1-왜-indexhtml-script-태그가-다를까)
+- [2. defer 없는 건 문제 없을까?](#2-defer-없는-건-문제-없을까)
+- [3. 여기서 나온 번들이 뭔가?](#3-여기서-나온-번들이-뭔가)
+- [4. ESM은 뭐길래?](#4-esm은-뭐길래)
+- [5. CRA(Webpack) vs Vite(ESM)](#5-crawebpack-vs-viteesm)
+- [6. .js vs .jsx는 왜 나눠 쓰는 걸까?](#6-js-vs-jsx는-왜-나눠-쓰는-걸까)
+- [7. 결론](#7-결론)
 
 ---
 
-## 1. index.html에서 본 차이
+## 1. 왜 index.html script 태그가 다를까?
 
-CRA에서는 `<head>` 끝자락에 script가 있고 `defer`가 붙어 있다.
+CRA에서는 `<head>`에 있고 `defer`가 붙어 있다:
 
 ```html
 <script src="/static/js/bundle.js" defer></script>
 ```
 
-Vite에서는 `<body>` 끝자락에 script가 있고, `type="module"`만 있다.
+Vite에서는 `<body>` 끝에 있고 `type="module"`만 있다:
 
 ```html
 <script type="module" src="/src/main.jsx"></script>
 ```
 
-→ Vite는 구조상 DOM 파싱이 끝난 뒤 실행되므로 `defer` 필요 없음.  
-→ CRA는 번들 방식이라 head에 올려두고 `defer`를 써서 실행 순서를 제어.
+---
+
+## 2. defer 없는 건 문제 없을까?
+
+- CRA는 번들 파일을 head에 넣으니까 **defer**로 실행 시점 조절이 필요.
+- Vite는 body 끝에 두고, 게다가 `type="module"`은 자동으로 defer처럼 동작 → 굳이 필요 없음.
 
 ---
 
-## 2. ESM이 뭔가?
+## 3. 여기서 나온 번들이 뭔가?
 
-ESM(ES Modules)은 자바스크립트의 공식 모듈 시스템.  
-`export` / `import` 문법이 바로 ESM이다.
+- CRA(Webpack)에서는 우리가 `import`를 써도 전부 **bundle.js 하나**로 합쳐진다.
+- 브라우저는 실제로 `import`를 해석하지 않고, 그냥 번들 파일 하나만 실행한다.
+
+---
+
+## 4. ESM은 뭐길래?
+
+- ES Modules = 자바스크립트 공식 모듈 시스템.
+- `export` / `import` 문법이 바로 ESM.
 
 ```js
 // App.jsx
@@ -49,40 +59,25 @@ import App from "./App.jsx";
 
 ---
 
-## 3. CRA(Webpack) 방식
+## 5. CRA(Webpack) vs Vite(ESM)
 
-- 개발할 땐 `import`를 쓰지만, Webpack이 모든 걸 **bundle.js 하나**로 묶는다.
-- 브라우저는 실제로 `import`를 해석하지 않고, 그냥 큰 번들 파일만 실행한다.
-
----
-
-## 4. Vite(ESM) 방식
-
-- 개발할 때 쓴 `import`를 브라우저가 직접 이해할 수 있도록 남겨둔다.
-- 브라우저가 `App.jsx` 요청 → Vite dev 서버가 그 파일만 변환해서 내려줌.
-- 즉, 브라우저가 직접 모듈 그래프를 따라가며 실행한다.
+- CRA: Webpack이 import들을 다 묶어서 번들 하나로 만든 뒤, 브라우저는 그거만 실행.
+- Vite: 브라우저가 실제로 `import`를 직접 따라가며 필요한 파일을 하나씩 요청.
 
 ---
 
-## 5. .js vs .jsx 차이
+## 6. .js vs .jsx는 왜 나눠 쓰는 걸까?
 
-- 둘 다 결국 ESM 모듈일 수 있다.
-- `.jsx`는 “이 안에 JSX 문법이 들어 있다”는 표시.
-- Webpack이나 Vite가 보고 **JSX → JS 코드**로 변환한다.
-- 문법 차이가 아니라, 사람/도구가 구분하기 위한 **컨벤션** 차이.
+- 둘 다 ESM 모듈 가능.
+- `.jsx`는 JSX 문법이 들어있다는 표시 → 도구가 변환할 때 참고.
+- 사실상 컨벤션 차이, 문법 차이는 아님.
 
 ---
 
-## 6. 요약
+## 7. 결론
 
-- `import` / `export` 문법 = ESM
-- CRA(Webpack): import는 개발 편의용, 빌드 시 번들 하나로 압축 → 브라우저는 ESM 직접 안 씀
-- Vite(ESM): import를 브라우저가 직접 따라가며 모듈 단위로 로딩
-- `.js` vs `.jsx`: 확장자 구분일 뿐, 문법 차이는 아님
-
-**짧게**
-
-- CRA: “우리가 import라고 쓰지만, Webpack이 다 압축 → 브라우저는 큰 번들만 본다”
-- Vite: “우리가 import라고 쓰면, 브라우저가 직접 따라가서 파일을 하나씩 가져온다”
+- CRA: `'큰 번들 파일 실행'`
+- Vite: `'브라우저가 import 직접 해석'`
+- `.js` vs `.jsx`: 확장자 구분일 뿐.
 
 ---
