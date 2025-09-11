@@ -2,18 +2,6 @@
 
 ---
 
-## 목차
-
-- [1. 왜 index.html script 태그가 다를까?](#1-왜-indexhtml-script-태그가-다를까)
-- [2. defer 없는 건 문제 없을까?](#2-defer-없는-건-문제-없을까)
-- [3. 여기서 나온 번들이 뭔가?](#3-여기서-나온-번들이-뭔가)
-- [4. ESM은 뭐길래?](#4-esm은-뭐길래)
-- [5. CRA(Webpack) vs Vite(ESM)](#5-crawebpack-vs-viteesm)
-- [6. .js vs .jsx는 왜 나눠 쓰는 걸까?](#6-js-vs-jsx는-왜-나눠-쓰는-걸까)
-- [7. 결론](#7-결론)
-
----
-
 ## 1. 왜 index.html script 태그가 다를까?
 
 CRA에서는 `<head>`에 있고 `defer`가 붙어 있다:
@@ -76,7 +64,7 @@ import App from "./App.jsx";
 
 ## 7. 결론
 
-- CRA: `'큰 번들 파일 실행'`
+- CRA: `'다 묶어서 하나의 큰 번들 파일 실행'`
 - Vite: `'브라우저가 import 하나씩 직접 해석'`
 - `.js` vs `.jsx`: 확장자 구분일 뿐.
 
