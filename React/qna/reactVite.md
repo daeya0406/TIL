@@ -77,7 +77,7 @@ import App from "./App.jsx";
 ## 7. 결론
 
 - CRA: `'큰 번들 파일 실행'`
-- Vite: `'브라우저가 import 직접 해석'`
+- Vite: `'브라우저가 import 하나씩 직접 해석'`
 - `.js` vs `.jsx`: 확장자 구분일 뿐.
 
 ---
