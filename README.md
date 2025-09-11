@@ -1,1 +1,4 @@
-Today I Learned, 하루씩 쌓아가기
+Today I Learned
+
+초석을 다지고 중,
+지금의 작은 배움이 결국 내가 만들 플랫폼의 기둥이 될 것
