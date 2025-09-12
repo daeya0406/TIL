@@ -1,4 +1,4 @@
-# ⚡ useEffect 정리
+# useEffect 정리
 
 ---
 

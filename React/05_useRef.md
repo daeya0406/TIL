@@ -1,4 +1,4 @@
-# 📌 useRef로 DOM 노드 참조하기 정리
+# useRef로 DOM 노드 참조하기 정리
 
 리액트에서 `useRef`를 이용해 DOM 노드에 직접 접근하는 방법 정리.
 

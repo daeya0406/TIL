@@ -1,4 +1,4 @@
-# 🪝 React Hook & 커스텀 훅 정리
+# React Hook & 커스텀 훅 정리
 
 ---
 
