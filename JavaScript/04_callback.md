@@ -1,4 +1,4 @@
-# 🧠 콜백 함수(Callback) 정리 – JavaScript/React
+# 콜백 함수(Callback) 정리 – JavaScript/React
 
 콜백 함수는 **다른 함수에 인자로 전달되어, 특정 시점에 호출되는 함수**. 동기/비동기 흐름 제어, 이벤트 처리, 고차함수(map/filter), React props 등에서 핵심적으로 사용됨.
 
