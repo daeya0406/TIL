@@ -77,7 +77,7 @@ const id = Number(userId);
 
 ---
 
-## 🚧 보너스: `search params`와 차이
+## (+) 보너스: `search params`와 차이
 
 - **useParams** → 경로 기반 값 (`/users/10`)
 - **useSearchParams** → 쿼리스트링 값 (`/users?tab=posts`)
