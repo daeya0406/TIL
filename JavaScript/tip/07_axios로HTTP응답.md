@@ -1,4 +1,6 @@
-# Axios HTTP 요청 치트시트
+(이 줄은 복사 후 삭제)
+
+# 🌐 Axios HTTP 요청 치트시트
 
 `axios`는 `fetch`와 같은 역할(HTTP 요청)을 하지만,  
 자동 JSON 처리, 에러 핸들링, 인터셉터 등 **편의 기능**이 많아서 실무에서 자주 사용된다.
@@ -72,6 +74,7 @@ try {
 ```js
 const api = axios.create({
   baseURL: "https://api.example.com",
+  timeout: 3000, // 요청 제한 시간(ms)
   headers: { Authorization: "Bearer 토큰값" },
 });
 
@@ -111,8 +114,59 @@ controller.abort(); // 요청 취소
 
 ---
 
+## 9) params (쿼리스트링 자동 처리)
+
+```js
+const res = await axios.get("/api/posts", {
+  params: { page: 1, limit: 10, search: "react" },
+});
+// 실제 요청: /api/posts?page=1&limit=10&search=react
+```
+
+---
+
+## 10) 여러 요청 동시에 (Promise.all)
+
+```js
+const [user, posts] = await Promise.all([
+  axios.get("/api/user/1"),
+  axios.get("/api/user/1/posts"),
+]);
+console.log(user.data, posts.data);
+```
+
+---
+
+## 11) 공통 인스턴스 + API 함수 패턴
+
+```js
+// 인스턴스 생성
+const instance = axios.create({
+  baseURL: "https://learn.codeit.kr/api",
+  timeout: 3000,
+  headers: { "Content-Type": "application/json" },
+});
+
+// API 함수 정의
+export async function getColorSurveys(params = {}) {
+  const res = await instance.get("/color-surveys", { params });
+  return res.data;
+}
+
+export async function createAvatar(avatarData) {
+  const res = await instance.post("/avatars", avatarData);
+  return res.data;
+}
+```
+
+- 공통 설정을 인스턴스로 묶고, API 함수로 모듈화하면 유지보수 👍
+
+---
+
 ## ✅ 정리
 
 - **fetch**: 브라우저 기본 제공 → 가볍고 표준적이지만 불편한 부분이 있음
-- **axios**: 설치 필요하지만, 자동 JSON, 에러 자동 throw, 인스턴스, 인터셉터, 취소 등 실무 기능 풍부
+- **axios**: 설치 필요하지만, 자동 JSON, 에러 자동 throw, 인스턴스, 인터셉터, params 지원, 요청 취소 등 실무 기능 풍부
 - 큰 규모 프로젝트에선 axios가 훨씬 편하다.
+
+(이 줄은 복사 후 삭제)
