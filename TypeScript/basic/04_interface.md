@@ -36,6 +36,9 @@ interface PrintProductFunction {
 const printProduct: PrintProductFunction = (product) => {
   console.log(`${product.name}의 가격은 ${product.price}원입니다.`);
 };
+
+printProduct(product1);
+printProduct(product2);
 ```
 
 ### 인터페이스 확장 (extends)
