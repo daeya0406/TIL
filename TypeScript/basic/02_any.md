@@ -33,14 +33,14 @@ console.log(product.reviews[2]);
 
 그래서 **직접 타입을 지정해줘야** 안전하게 다룰 수 있음.
 
-#### 1. 콜론(`:`)으로 타입 지정
+#### (1) 콜론(`:`)으로 타입 지정
 
 ```ts
 const parsedProduct: { name: string; price: number } = 
   JSON.parse('{"name": "코드잇 토트백", "price": 12000}');
 ```
 
-#### 2. as로 타입 단언
+#### (2) as로 타입 단언
 
 ```ts
 const parsedProduct = JSON.parse('{"name": "코드잇 토트백", "price": 12000}')
