@@ -1,0 +1,37 @@
+## Enum(열거형)
+
+- **정의**: 배열은 너무 광범위하고, 특정 값들을 열거할 때 사용
+- **용도**: 사이즈 같이 지정된 값들(select 처럼)을 나타낼 때 사용
+
+```ts
+// 숫자형 Enum (자동으로 0부터 시작)
+enum Size {
+  S,   // 0
+  M,   // 1
+  L,   // 2
+  XL,  // 3
+}
+
+console.log(Size.S); // 0
+console.log(Size.M); // 1
+console.log(Size.L); // 2
+```
+
+조건문으로 사용할 때
+```ts
+if (Size.S) {
+  console.log("참"); // 출력되지 않음, 0은 false
+}
+```
+이렇게 0에서 의도치 않게 false가 될 수 있다.
+
+
+```ts
+enum Size {
+  S = 'S',
+  M = 'M',
+  L = 'L',
+  XL = 'XL',
+}
+```
+따라서 다음과 같이 꼭 지정된 값을 넣어주는 것이 좋다.
