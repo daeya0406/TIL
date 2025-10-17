@@ -36,14 +36,14 @@ console.log(product.reviews[2]);
 #### ① 콜론(`:`)으로 타입 지정
 
 ```ts
-const parsedProduct1: { name: string; price: number } = 
+const parsedProduct: { name: string; price: number } = 
   JSON.parse('{"name": "코드잇 토트백", "price": 12000}');
 ```
 
 #### ② as로 타입 단언
 
 ```ts
-const parsedProduct2 = JSON.parse('{"name": "코드잇 토트백", "price": 12000}')
+const parsedProduct = JSON.parse('{"name": "코드잇 토트백", "price": 12000}')
   as { name: string; price: number };
 ```
 
