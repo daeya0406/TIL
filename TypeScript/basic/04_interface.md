@@ -29,12 +29,13 @@ const product2: Product = {
 
 함수와 함께 사용할 수도 있다.
 ```ts
-function printProduct(product: Product) {
-  console.log(`${product.name}의 가격은 ${product.price}원입니다.`);
+interface PrintProductFunction {
+  (product: Product): void;
 }
 
-printProduct(product1);
-printProduct(product2);
+const printProduct: PrintProductFunction = (product) => {
+  console.log(`${product.name}의 가격은 ${product.price}원입니다.`);
+};
 ```
 
 ### 인터페이스 확장 (extends)
