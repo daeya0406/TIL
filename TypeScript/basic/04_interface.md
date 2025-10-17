@@ -8,7 +8,7 @@ interface Product {
   id: string;
   name: string;
   price: number;
-  membersOnly?: boolean; // 선택적 속성 (없어도 됨)
+  membersOnly?: boolean;
 }
 ```
 
